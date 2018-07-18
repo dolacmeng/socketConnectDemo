@@ -18,8 +18,24 @@ class HYSocket {
 
 extension HYSocket {
     func connectServer() -> Bool {
-        let temp = tcpClient.connect(timeout: 5)
-        print(temp.1)
-        return temp.0
+        return tcpClient.connect(timeout: 5).0
+    }
+    
+    func sendMsg(data : Data){
+        tcpClient.send(data: data)
+    }
+    
+    func sendMsg(message: String) {
+        //1.获取消息长度
+        let data = message.data(using: .utf8)!
+        print(data.count)
+        var length = data.count
+        
+        //将消息长度写入data
+        let headerData = Data(bytes:&length, count: 4)
+        
+        //发送消息
+        let totalData = headerData + data
+        self.sendMsg(data: totalData)
     }
 }

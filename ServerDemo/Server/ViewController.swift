@@ -19,7 +19,7 @@ class ViewController: NSViewController {
     
     @IBAction func startServer(_ sender: NSButton) {
         serverMgr.startRunning()
-        hintLabel.stringValue = "服务器已经开启ing"
+        hintLabel.stringValue = "服务器已经开启"
     }
     
     @IBAction func stopServer(_ sender: NSButton) {
@@ -27,4 +27,5 @@ class ViewController: NSViewController {
         hintLabel.stringValue = "服务器未开启"
     }
 }
+
 
