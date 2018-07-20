@@ -43,12 +43,22 @@ extension ServerManager{
     fileprivate func handlerClient(_ client : TCPClient){
         //用一个ClientManager管理TCPClient
         let mgr = ClientManager(tcpClient:client)
+        mgr.delegate = self;
         
         //保存客户端
         clientMrgs.append(mgr)
         
         //用client开始接收消息
         mgr.startReadMsg()
+    }
+}
+
+
+extension ServerManager : ClientManagerDelegate{
+    func sendMsgClient(_ data: Data) {
+        for mgr in clientMrgs{
+            mgr.tcpClient.send(data: data)
+        }
     }
 }
 

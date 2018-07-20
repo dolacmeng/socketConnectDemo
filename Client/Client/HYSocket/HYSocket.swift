@@ -46,4 +46,29 @@ extension HYSocket {
         let totalData = headerData + msgData
         self.sendMsg(data: totalData)
     }
+    
+    func startReadMsg() {
+        DispatchQueue.global().async {
+            while true {
+                 guard let lMsg = self.tcpClient.read(4) else{
+                    continue
+                 }
+                //获取数据长度的data
+                let lMsgData = Data(bytes: lMsg, count: 4)
+                var length : Int = 0
+                (lMsgData as NSData).getBytes(&length, length: 4)
+                
+                //根据长度读取消息
+                guard let msg = self.tcpClient.read(length) else{
+                    return
+                }
+                let msgData  = Data(bytes: msg, count: length)
+                
+                let message = try! TextMessage.parseFrom(data: msgData)
+                let user = message.user
+                print("来自" + (user?.name)! + "的消息:" + message.text)
+            }
+        }
+    }
+    
 }

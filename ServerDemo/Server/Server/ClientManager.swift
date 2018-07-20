@@ -8,8 +8,14 @@
 
 import Cocoa
 
+protocol ClientManagerDelegate : class{
+    func sendMsgClient(_ data : Data)
+}
+
 class ClientManager: NSObject {
     var tcpClient : TCPClient
+    
+    weak var delegate : ClientManagerDelegate?
     
     fileprivate var isClientConnect : Bool = false
     
@@ -37,6 +43,9 @@ extension ClientManager{
                 let message = try! TextMessage.parseFrom(data: msgData)
                 let user = message.user
                 print("接收到来自" + (user?.name)! + "的消息:" + message.text)
+                
+                //代理转发
+                delegate?.sendMsgClient(lMsgData+msgData)
             }else{
                 isClientConnect = false
                 print("客户端断开了连接")

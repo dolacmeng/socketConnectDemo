@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Server/Server/ClientManager.swift"
-            timestampString = "553769023.785367"
+            timestampString = "553769803.4604959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "startReadMsg()"
             landmarkType = "7">
          </BreakpointContent>

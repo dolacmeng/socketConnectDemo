@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     @IBAction func clickConnect(_ sender: UIButton) {
         if socket.connectServer() {
             print("连接上服务器")
+            socket.startReadMsg()
             socket.sendMsg(message: "您好啊，服务器");
         }
     }
