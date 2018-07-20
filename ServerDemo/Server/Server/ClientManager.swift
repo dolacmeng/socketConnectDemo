@@ -33,8 +33,10 @@ extension ClientManager{
                     return
                 }
                 let msgData  = Data(bytes: msg, count: length)
-                let msgString = String(data: msgData, encoding: .utf8)
-                print(msgString!)
+                
+                let message = try! TextMessage.parseFrom(data: msgData)
+                let user = message.user
+                print("接收到来自" + (user?.name)! + "的消息:" + message.text)
             }else{
                 isClientConnect = false
                 print("客户端断开了连接")

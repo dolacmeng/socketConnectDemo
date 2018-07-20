@@ -26,16 +26,24 @@ extension HYSocket {
     }
     
     func sendMsg(message: String) {
+        
+        let userInfo = UserInfo.Builder()
+        userInfo.name = "Jack"
+        userInfo.level = 10
+        
+        let textMessage = TextMessage.Builder()
+        textMessage.user = try! userInfo.build()
+        textMessage.text = message
+        let msgData = (try! textMessage.build()).data()
+        
         //1.获取消息长度
-        let data = message.data(using: .utf8)!
-        print(data.count)
-        var length = data.count
+        var length = msgData.count
         
         //将消息长度写入data
         let headerData = Data(bytes:&length, count: 4)
         
         //发送消息
-        let totalData = headerData + data
+        let totalData = headerData + msgData
         self.sendMsg(data: totalData)
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D59C8B320FE0D5E0000FF9C /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59C8B220FE0D5E0000FF9C /* ClientManager.swift */; };
+		5DAD26EF2101D4B900A2E90B /* Immessage.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD26EE2101D4B900A2E90B /* Immessage.proto.swift */; };
 		70AA51E11DFD2EAB00A553DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA51E01DFD2EAB00A553DA /* AppDelegate.swift */; };
 		70AA51E31DFD2EAB00A553DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA51E21DFD2EAB00A553DA /* ViewController.swift */; };
 		70AA51E51DFD2EAB00A553DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70AA51E41DFD2EAB00A553DA /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		5D59C8B220FE0D5E0000FF9C /* ClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientManager.swift; sourceTree = "<group>"; };
+		5DAD26EE2101D4B900A2E90B /* Immessage.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Immessage.proto.swift; path = ../../../Client/Client/Immessage.proto.swift; sourceTree = "<group>"; };
 		70AA51DD1DFD2EAB00A553DA /* Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Server.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70AA51E01DFD2EAB00A553DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70AA51E21DFD2EAB00A553DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,11 +49,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DAD26D62101C22300A2E90B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		70AA51D41DFD2EAB00A553DA = {
 			isa = PBXGroup;
 			children = (
 				70AA51DF1DFD2EAB00A553DA /* Server */,
 				70AA51DE1DFD2EAB00A553DA /* Products */,
+				5DAD26D62101C22300A2E90B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +92,7 @@
 				70AA51F21DFD300A00A553DA /* ysocket */,
 				70AA51F01DFD2F9B00A553DA /* ServerManager.swift */,
 				5D59C8B220FE0D5E0000FF9C /* ClientManager.swift */,
+				5DAD26EE2101D4B900A2E90B /* Immessage.proto.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -170,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70AA51FA1DFD300A00A553DA /* ytcpsocket.swift in Sources */,
+				5DAD26EF2101D4B900A2E90B /* Immessage.proto.swift in Sources */,
 				70AA51E31DFD2EAB00A553DA /* ViewController.swift in Sources */,
 				70AA51F11DFD2F9B00A553DA /* ServerManager.swift in Sources */,
 				70AA51F81DFD300A00A553DA /* ysocket.swift in Sources */,

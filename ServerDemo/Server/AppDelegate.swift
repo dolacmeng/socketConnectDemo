@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ProtocolBuffers
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
